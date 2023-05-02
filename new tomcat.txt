@@ -1,0 +1,23 @@
+touch Dockerfile
+vim Dockerfile
+
+FROM tomcat
+MAINTAINER csgeek@mail.com
+
+ENV JPDA_ADDRESS 8000
+EXPOSE 8000
+EXPOSE 8080
+ENTRYPOINT ["catalina.sh", "jpda","run"]
+CMD echo "jsptomcat is launched"
+
+touch index.html
+vim index.html
+
+<html>
+<head>
+<title>A page</title>
+</head><body>
+<h1>Not Found</h1>
+<p> this is tomcat file </p>
+</body>
+</html>
